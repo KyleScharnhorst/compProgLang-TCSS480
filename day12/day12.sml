@@ -14,6 +14,12 @@ fun message(grade : char) =
     |   #"D" => "poor"
     |   _ => "hmmmm"
     
+fun     message2 #"A" = "very good"
+    |   message2 #"B" = "good"
+    |   message2 #"C" = "avg"
+    |   message2 #"D" = "poor"
+    |   message2 #"F" = "hmmmm"
+    
     
 datatype mytype = TwoInts of int * int
                 | Str of string
