@@ -48,12 +48,11 @@ val tcaps3 = onlyCapitals(["hello", "t"]) = []
 val tadverb1 = onlyAdverbs([]) = []
 val tadverb2 = onlyAdverbs(["hello", "th"]) = []
 val tadverb3 = onlyAdverbs(["hello", "gladly", "Slowly", "ly"]) = ["gladly", "Slowly", "ly"]
-(*
+val funcs = [onlyCapitals, onlyAdverbs];
+
 val filts1 = filters(funcs, ["Mine", "slowly", "Gladly", "glad", "Happy", "ly"]) =  [["Mine","Gladly","Happy"],["slowly","Gladly","ly"],
    ["Mine","slowly","Gladly","glad","Happy","ly"]] 
 val filts2 = filters([], ["testing", "list"]) = [["testing", "list"]]
 val filts3 = filters(funcs, []) = [[]]
 val filts4 = filters([onlyCapitals], ["hello", "Hello", "there", "T"]) = [["Hello", "T"],["hello", "Hello", "there", "T"]]
 val filts5 = filters([onlyCapitals, onlyCapitals, onlyCapitals], ["T", "t"]) = [["T"],["T"],["T"],["T","t"]]
-
-*)
