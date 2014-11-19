@@ -1,4 +1,6 @@
-use "assign5.sml";
+(* use "..\\assignment5\\assign5tests.sml"; *)
+use "..\\assignment5\\assign5.sml";
+
 
 val topts1 = addIntOptions(SOME 4, NONE) = SOME 4
 val topts2 = addIntOptions(SOME 4, SOME 5) = SOME 9 
@@ -26,17 +28,19 @@ val testgetnth2 = getnth(["hello", "there", "universe"], 3) = "universe"
 val testgetnth3 = getnth(["hello", "there", "universe"], 4) = "no such element" 
 val testgetnth4 = getnth([], 2) = "no such element" 
 
+(*
 val sCards1 = sumCards([Ace,King,Queen,Jack,Num(10),Num(9),Num(8),Num(7),Num(6),Num(5),Num(4),Num(3),Num(2)]) = 127
 val sCards2 = sumCards([]) = 0
 
 val tree1 = insert(insert(insert(Empty, 10), 5), 15)
 val tree2 = insert(insert(insert(tree1, 1), 7), 20)
 
+
 val ttree1 = sumTree(Empty) = 0
 val ttree2 = sumTree(insert(Empty, 10)) = 10
 val ttree3 = sumTree(tree1) = 30
 val ttree4 = sumTree(tree2) = 58
-
+*)
 val tcaps1 = onlyCapitals([]) = []
 val tcaps2 = onlyCapitals(["hello", "Hello", "there", "T"]) = ["Hello", "T"]
 val tcaps3 = onlyCapitals(["hello", "t"]) = []
@@ -44,7 +48,7 @@ val tcaps3 = onlyCapitals(["hello", "t"]) = []
 val tadverb1 = onlyAdverbs([]) = []
 val tadverb2 = onlyAdverbs(["hello", "th"]) = []
 val tadverb3 = onlyAdverbs(["hello", "gladly", "Slowly", "ly"]) = ["gladly", "Slowly", "ly"]
-
+(*
 val filts1 = filters(funcs, ["Mine", "slowly", "Gladly", "glad", "Happy", "ly"]) =  [["Mine","Gladly","Happy"],["slowly","Gladly","ly"],
    ["Mine","slowly","Gladly","glad","Happy","ly"]] 
 val filts2 = filters([], ["testing", "list"]) = [["testing", "list"]]
@@ -52,3 +56,4 @@ val filts3 = filters(funcs, []) = [[]]
 val filts4 = filters([onlyCapitals], ["hello", "Hello", "there", "T"]) = [["Hello", "T"],["hello", "Hello", "there", "T"]]
 val filts5 = filters([onlyCapitals, onlyCapitals, onlyCapitals], ["T", "t"]) = [["T"],["T"],["T"],["T","t"]]
 
+*)

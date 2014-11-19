@@ -1,11 +1,11 @@
-1)
+(*1*)
 fun addIntOptions(a : int option, b : int option) =
 	if a = NONE andalso b = NONE then NONE
 	else if a = NONE andalso b <> NONE then b
 	else if a <> NONE andalso b = NONE then a
 	else SOME (valOf(a) + valOf(b));
 
-2)
+(*2*)
 fun oldest(l: (int*int*int) list) =
 	if null l then NONE
 	else 
@@ -18,7 +18,7 @@ fun oldest(l: (int*int*int) list) =
 			SOME (getDate(tl l, hd l))
 		end;
 
-3)
+(*3*)
 fun binary(n : int) =
 	let
 		fun iter (0, bin) = bin
@@ -28,7 +28,7 @@ fun binary(n : int) =
 		else (n >= 0 , iter(abs n, ""))
 	end;	
 		
-4)
+(*4*)
 fun isYounger(date: int*int*int, date2: int*int*int) =
 	case #3 date > #3 date2 of
 	true => true
@@ -37,14 +37,15 @@ fun isYounger(date: int*int*int, date2: int*int*int) =
 		|false => case #1 date > #1 date2 of
 			true => true
 			|false => false;
-5)
+(*5*)
 
 fun getnth ([], n) = "no such element"
 	|getnth(l, 1) = hd l
 	|getnth(l, 0) = "no such element"
 	|getnth(l, n) = getnth(tl l, n - 1);
 
-6)
+(*6*)
+(*
 fun sumCards l =
 	if null l then 0
 	else 
@@ -74,7 +75,10 @@ fun sumCards l =
 		in
 			getVal(hd l) + sumCards(tl l)
 		end;
-7)
+		
+*)
+(*7*)
+(*
 datatype 'a bstree = Empty | Node of 'a * 'a bstree * 'a bstree
 
 
@@ -93,15 +97,16 @@ fun insert(tree : 'a tree, compare, data : 'a) =
 
 fun sumtree a' tree = 0
   | sumtree (Node(x, left, right)) = x + (sumtree left) + (sumtree right);
-8)
+  *)
+(*8*)
 fun isCap s = Char.isUpper(String.sub(s, 0));
 fun onlyCapitals(l : string list) = List.filter isCap l;
 
-9)
+(*9*)
 fun isAd s = if size s >= 2 then String.substring(s, size (s) - 2, 2) = "ly" else false;
 fun onlyAdverbs(l : string list) = List.filter isAd l;
 
-10)
+(*10*)
 
 fun filters(l, l2: string list) =
 	if null l then [l2]
