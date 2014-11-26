@@ -1,0 +1,146 @@
+Exercise number 2 for assignment 6.
+
+CREATE QUERIES:
+1.In which year was the movie American Beauty released?
+	movie(american_beauty, Y).
+	Y = 1999.
+	
+2.Find the movies released in the year 2000.
+	movie(M, 2000).
+	M = down_from_the_mountain.
+	
+3.Find the movies released before 2000. ( eg movie(X, Y), Y<2000. )
+	movie(M, Y),   Y<2000.
+	M = the_usual_suspects,
+	Y = 1995 ;
+	M = american_beauty,
+	Y = 1999 ;
+	M = barton_fink,
+	Y = 1991 ;
+	M = crimewave,
+	Y = 1985 ;
+	M = lick_the_star,
+	Y = 1998 ;
+	M = the_horse_whisperer,
+	Y = 1998 ;
+	M = blade_runner,
+	Y = 1997.
+
+4.Find the movies released after 1990.
+	movie(M, Y), Y>1990.
+	M = the_usual_suspects,
+	Y = 1995 ;
+	M = american_beauty,
+	Y = 1999 ;
+	M = down_from_the_mountain,
+	Y = 2000 ;
+	M = girl_with_a_pearl_earring,
+	Y = 2003 ;
+	M = barton_fink,
+	Y = 1991 ;
+	M = lick_the_star,
+	Y = 1998 ;
+	M = the_horse_whisperer,
+	Y = 1998 ;
+	M = blade_runner,
+	Y = 1997.
+
+5.Find an actor who has appeared in more than one movie. (2 queries with the same variable for actor, different for movie and role. You must also state that the first movie variable cannot equal the second).
+	actor(A,B,C), actor(D,B,F), not(A=D).
+	A = american_beauty,
+	B = kevin_spacey,
+	C = lester_burnham,
+	D = the_usual_suspects,
+	F = roger_verbal_kint ;
+	A = american_beauty,
+	B = chris_cooper,
+	C = col_frank_fitts_usmc,
+	D = the_horse_whisperer,
+	F = frank_booker ;
+	A = the_usual_suspects,
+	B = kevin_spacey,
+	C = roger_verbal_kint,
+	D = american_beauty,
+	F = lester_burnham ;
+	A = the_horse_whisperer,
+	B = chris_cooper,
+	C = frank_booker,
+	D = american_beauty,
+	F = col_frank_fitts_usmc ;
+	
+6.Find a director who has directed a movie in which the actress Scarlett Johansson appeared.
+	director(M,D), actress(M,scarlett_johansson,R).
+	M = girl_with_a_pearl_earring,
+	D = peter_webber,
+	R = griet ;
+
+7.Find an actor who has also directed a movie.
+	actor(M,A,R), director(X,A).
+	M = crimewave,
+	A = joel_coen,
+	R = reporter_at_execution,
+	X = barton_fink ;
+	M = X, X = blade_runner,
+	A = joseph_d_kucan,
+	R = crazylegs_larry.
+
+8.Find an actor or actress who has also directed a movie.(Use the semi-colon to separate out the two queries, actors will be found first)
+	actor(M,A,R), director(X,A); actress(M,A,R), director(X,A).
+	M = crimewave,
+	A = joel_coen,
+	R = reporter_at_execution,
+	X = barton_fink ;
+	M = X, X = blade_runner,
+	A = joseph_d_kucan,
+	R = crazylegs_larry ;
+	M = anna,
+	A = sofia_coppola,
+	R = noodle,
+	X = lick_the_star.
+
+9.Find the movie in which John Goodman and Jeff Bridges were co-stars.
+	actor(M,john_goodman,R), actor(M, jeff_bridges, X).
+	false.
+	
+10.Find the movies in which Steve Buscemi and John Goodman were both actors.
+	actor(M,steve_buscemi,R), actor(M,john_goodman, X).
+	false.
+
+Add rules to the database to do the following,
+--------------------------------------------------
+
+released_after(M, Y) - the movie was released after the given year
+	releasedAfter(X,1990).
+	X = the_usual_suspects ;
+	X = american_beauty ;
+	X = down_from_the_mountain ;
+	X = girl_with_a_pearl_earring ;
+	X = barton_fink ;
+	X = lick_the_star ;
+	X = the_horse_whisperer ;
+	X = blade_runner.
+	
+released_before(M, Y) - the movie was released before the given year
+	releasedBefore(M, 2000).
+	M = the_usual_suspects ;
+	M = american_beauty ;
+	M = barton_fink ;
+	M = crimewave ;
+	M = lick_the_star ;
+	M = the_horse_whisperer ;
+	M = blade_runner.
+	
+same_year(M1, M2) - the movies are released in the same year
+	same_year(M1, M2).
+	M1 = lick_the_star,
+	M2 = the_horse_whisperer ;
+	M1 = the_horse_whisperer,
+	M2 = lick_the_star ;
+	
+co_star(A1, A2) - the actor/actress are in the same movie
+	co_star(kevin_spacey, A2).
+	A2 = wes_bentley ;
+	A2 = chris_cooper ;
+	A2 = annette_bening ;
+	A2 = thora_birch ;
+	A2 = mena_suvari ;
