@@ -23,7 +23,7 @@ val loop23 = isLoop([(2,2),(2,0),(2,1),(1,1),(1,0),(0,0)]) = false
 val loop24 = isLoop([(2,0),(2,2),(2,1),(1,1),(1,0),(0,0)]) = true
 val loop31 = isLoop([(3,3),(3,2),(3,1),(3,0),(2,2),(2,1),(2,0),(1,1),(1,0),(0,0)]) = false
 val loop41 = isLoop([(0,0),(0,1),(1,1),(2,1),(2,2),(2,3),(3,3),(3,4),(4,4),(4,2),(0,2),(0,3),(1,3),(1,4),(0,4)])
-
+(*
 val flipt0 = flip([]) = []
 val flipt1 = flip([(0,0)]) = [(0,0)]
 val flipt2 = flip([(2,0),(2,2),(1,2),(1,1),(1,0),(0,0)]) = [(0,2),(2,2),(2,1),(1,1),(1,0),(0,0)]
@@ -40,7 +40,7 @@ val st1 = listAsString(sol1)
 val st2 = listAsString(sol2)
 val st3 = listAsString(sol3)
 val st4 = listAsString(sol4)
-
+*)
 (* once you get all the above functions working, uncomment the driver *)
 (*val dt0 = driver(listAsString, solution) 0
 val dt1 = driver(listAsString, solution) 1
