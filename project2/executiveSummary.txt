@@ -1,0 +1,25 @@
+I started this assignment by examining the project description and letting everything soak in.
+The project was designed in a very modular way so that starting it and developing the project could
+be done small stages. Completing the project one function at a time provided a nice benchmark for 
+stage. SML is one cold mistress. The syntax for SML is very awkward when you're not used to it.
+I spent many hours working on trying to create a proper seed for random permutation. I tried using
+Timer and Time structures but was never able to convert them into int types. I saw examples of people
+doing just that online, but for whatever reason the Time.time values I was getting did not want to be 
+turned into int values. I decided after many grueling hours of trial and error that it just wasn't
+worth it to pursue any further. I created a static global seed that would be used at every call of
+the permutation function. This would mean that re-running the program would produce the same 
+random number generations instead of always having a unique generation. It is very easy to be 
+caught up in the knitty gritty of an assignment but after a certain point you gotta just move on. 
+After moving on and cleaning up my permutation function things went rather smoothly. I just wish I
+had more time to work on it the assignment. It is a very interesting problem that contains a lot of
+pitfalls. Just the logic for checking for a loop has about 8 different checks that you need to cover. 
+so you need to check your first and last elements to see if they can be rotated to match then you need to check
+if the next element in the head and the element previous to the tale will match without affecting the relationship
+required by the head and tail. The test file given doesn't account for:
+isLoop([(3,2),(2,4),(4,6),(6,2)]);
+which should evaluate to false.
+Just the sheer number of cases causes a lot of bloated logic statements. Or that's how I feel anyways.
+Missing that case would cause a lot of headache moving onto the flip function. Imagining trying to
+flip a list around that can't be made into a loop. Game over man, haha.
+Well, it's getting late and I'm sure I've ranted enough. Cool, assignment, but just no fun using SML.
+I would have preferred working more with prolog.
